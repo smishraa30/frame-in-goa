@@ -257,6 +257,15 @@ h1.big .pink {
   top: 78px;
 }
 
+/* Studio grid stacks to one column below 940px — a sticky preview would
+   stay pinned to the viewport top and get scrolled over by the controls
+   flowing underneath it, instead of sitting beside them. */
+@media (max-width: 940px) {
+  .stage {
+    position: static;
+  }
+}
+
 .canvas-shell {
   position: relative;
   border: 1px solid var(--line);
