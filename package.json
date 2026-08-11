@@ -1,0 +1,27 @@
+{
+  "name": "frame-in-goa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HH Goa 2026 — Frame / Builder Pass generator. Upload a photo, get a branded graphic in under a second.",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.27.0",
+    "heic-to": "^1.5.2",
+    "next": "15.1.6",
+    "qrcode": "^1.5.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
+  }
+}
