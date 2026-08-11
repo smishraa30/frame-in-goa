@@ -40,6 +40,12 @@ export function isAllowed(url: string) {
 }
 
 export async function saveCard(id: string, bytes: Buffer, contentType = "image/png") {
+  // Serverless tmpdir is per-instance and short-lived: a link written there
+  // would preview fine for a minute and 404 later. Better to refuse and let
+  // the client attach the image directly.
+  if (!hasBlob() && process.env.VERCEL) {
+    throw new Error("no_durable_storage");
+  }
   if (hasBlob()) {
     const { put } = await import("@vercel/blob");
     const res = await put(`cards/${id}.png`, bytes, {
